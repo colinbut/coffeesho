@@ -5,5 +5,45 @@
  */
 package com.mycompany.coffeeshop;
 
-public class CoffeeMachine {
+/**
+ * @author colin
+ */
+public class CoffeeMachine extends Thread {
+
+    static String coffeeMade;
+    static final Object lock = new Object();
+    private static int coffeeNumber = 1;
+
+    void makeCoffee() {
+        synchronized (lock) {
+            if (coffeeMade != null) {
+                try {
+                    System.out.println("Coffee machine: " + " Waiting for waiter notification to deliver the coffee");
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                coffeeMade = "Coffee No." + coffeeNumber++;
+                System.out.println("Coffee machine: " + "made " + coffeeMade);
+                lock.notifyAll();
+                System.out.println("Coffee machine: notifying the Waiter to pick the coffee");
+            }
+
+        }
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            System.out.println("Making another coffee now");
+            makeCoffee();
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
 }
