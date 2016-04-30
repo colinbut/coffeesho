@@ -5,7 +5,7 @@ package com.mycompany.coffeeshop;
  *
  * @author colin
  */
-public class Coffeeshop {
+public class CoffeeShop {
 
     /**
      * Main program
@@ -13,7 +13,7 @@ public class Coffeeshop {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Coffeeshop");
+        System.out.println("CoffeeShop");
         CoffeeMachine coffeeMachine = new CoffeeMachine();
         Waiter waiter = new Waiter();
         coffeeMachine.start();
