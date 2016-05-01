@@ -8,13 +8,16 @@ package com.mycompany.coffeeshop;
 /**
  * @author colin
  */
-public class CoffeeMachine extends Thread {
+public class CoffeeMachine implements Runnable {
 
     static String coffeeMade;
     static final Object lock = new Object();
     private static int coffeeNumber = 1;
 
-    void makeCoffee() {
+    /**
+     * Produces the coffee
+     */
+    private void makeCoffee() {
         synchronized (lock) {
             if (coffeeMade != null) {
                 try {
@@ -33,6 +36,10 @@ public class CoffeeMachine extends Thread {
         }
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void run() {
         while (true) {

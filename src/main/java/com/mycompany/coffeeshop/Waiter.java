@@ -10,9 +10,12 @@ package com.mycompany.coffeeshop;
  *
  * @author colin
  */
-public class Waiter extends Thread {
+public class Waiter implements Runnable {
 
-    public void getCoffee() {
+    /**
+     * Retrieves the coffee from the coffee machine
+     */
+    private void getCoffee() {
         synchronized (CoffeeMachine.lock) {
             if (CoffeeMachine.coffeeMade == null) {
                 try {
@@ -30,6 +33,11 @@ public class Waiter extends Thread {
         }
     }
 
+
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void run() {
         // constantly delivering coffee to customers
