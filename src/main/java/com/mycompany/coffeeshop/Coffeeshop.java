@@ -14,7 +14,7 @@ public class CoffeeShop {
      */
     public static void main(String[] args) {
         System.out.println("CoffeeShop");
-        new Thread(new CoffeeMachine()).start();
+        new Thread(new Barista()).start();
         new Thread(new Waiter()).start();
     }
 }

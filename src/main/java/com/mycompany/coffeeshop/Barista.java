@@ -8,7 +8,7 @@ package com.mycompany.coffeeshop;
 /**
  * @author colin
  */
-public class CoffeeMachine implements Runnable {
+public class Barista implements Runnable {
 
     static String coffeeMade;
     static final Object lock = new Object();

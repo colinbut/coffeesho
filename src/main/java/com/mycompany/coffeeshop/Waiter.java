@@ -16,18 +16,18 @@ public class Waiter implements Runnable {
      * Retrieves the coffee from the coffee machine
      */
     private void getCoffee() {
-        synchronized (CoffeeMachine.lock) {
-            if (CoffeeMachine.coffeeMade == null) {
+        synchronized (Barista.lock) {
+            if (Barista.coffeeMade == null) {
                 try {
                     System.out.println("Waiter: Will get new orders in the meantime while Coffee Machine makes the coffee");
-                    CoffeeMachine.lock.wait();
+                    Barista.lock.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             } else {
-                System.out.println("Waiter: Delivering " + CoffeeMachine.coffeeMade + " to customer");
-                CoffeeMachine.coffeeMade = null;
-                CoffeeMachine.lock.notifyAll();
+                System.out.println("Waiter: Delivering " + Barista.coffeeMade + " to customer");
+                Barista.coffeeMade = null;
+                Barista.lock.notifyAll();
                 System.out.println("Waiter: Notifying the coffee machine to make next one");
             }
         }
