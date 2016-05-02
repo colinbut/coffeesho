@@ -1,5 +1,8 @@
 package com.mycompany.coffeeshop;
 
+import com.mycompany.coffeeshop.core.Barista;
+import com.mycompany.coffeeshop.core.Waiter;
+
 /**
  * Coffee Shop
  *
