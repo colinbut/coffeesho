@@ -3,22 +3,21 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model;
+package com.mycompany.coffeeshop.model.beverages;
 
 /**
- * A Latte
+ * A Macchiatto
  *
  * @author colin
  */
-public class Latte extends AbstractBeverage {
-
+public class Macchiatto extends AbstractBeverage {
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return 2.30;
+        return 3.45;
     }
 
 
@@ -27,7 +26,7 @@ public class Latte extends AbstractBeverage {
      */
     @Override
     public String description() {
-        return "Latte";
+        return "Macchiatto";
     }
 
 }

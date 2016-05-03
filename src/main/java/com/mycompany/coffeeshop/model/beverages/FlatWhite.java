@@ -3,14 +3,14 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model;
+package com.mycompany.coffeeshop.model.beverages;
 
 /**
- * A Cappuccino
+ * A Flat White
  *
  * @author colin
  */
-public class Cappuccino extends AbstractBeverage {
+public class FlatWhite extends AbstractBeverage {
 
     /**
      * {@inheritDoc}
@@ -26,6 +26,6 @@ public class Cappuccino extends AbstractBeverage {
      */
     @Override
     public String description() {
-        return "Cappuccino";
+        return "Flat White";
     }
 }

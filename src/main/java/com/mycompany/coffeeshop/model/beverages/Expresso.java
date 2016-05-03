@@ -3,22 +3,19 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model;
+package com.mycompany.coffeeshop.model.beverages;
 
 /**
- * A Cortado
- *
  * @author colin
  */
-public class Cortado extends AbstractBeverage {
-
+public class Expresso extends AbstractBeverage {
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return 2.45;
+        return 2.50;
     }
 
 
@@ -27,6 +24,7 @@ public class Cortado extends AbstractBeverage {
      */
     @Override
     public String description() {
-        return "Cortado";
+        return "Expresso";
     }
+
 }

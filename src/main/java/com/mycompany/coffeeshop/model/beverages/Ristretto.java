@@ -3,21 +3,21 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model;
+package com.mycompany.coffeeshop.model.beverages;
 
 /**
- * A Double-Shot Expresso
+ * A Ristretto
  *
  * @author colin
  */
-public class DoubleShotExpresso extends Expresso {
+public class Ristretto extends AbstractBeverage {
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return super.cost() + 1.00;
+        return 2.35;
     }
 
 
@@ -26,6 +26,6 @@ public class DoubleShotExpresso extends Expresso {
      */
     @Override
     public String description() {
-        return "Double shot of " + super.description();
+        return "Ristretto";
     }
 }

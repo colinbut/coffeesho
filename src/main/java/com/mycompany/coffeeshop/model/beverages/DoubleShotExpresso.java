@@ -3,28 +3,29 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model;
+package com.mycompany.coffeeshop.model.beverages;
 
 /**
- * A Filter coffee
+ * A Double-Shot Expresso
  *
  * @author colin
  */
-public abstract class FilterCoffee extends AbstractBeverage {
+public class DoubleShotExpresso extends Expresso {
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return 1.00;
+        return super.cost() + 1.00;
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public String description() {
-        return "Filter Coffee";
+        return "Double shot of " + super.description();
     }
 }

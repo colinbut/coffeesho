@@ -5,7 +5,7 @@
  */
 package com.mycompany.coffeeshop.model.extras;
 
-import com.mycompany.coffeeshop.model.Beverage;
+import com.mycompany.coffeeshop.model.beverages.Beverage;
 
 /**
  * Representation for Extras for adding on to a Beverage

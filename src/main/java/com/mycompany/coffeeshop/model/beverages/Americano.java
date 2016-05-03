@@ -3,21 +3,22 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model;
+package com.mycompany.coffeeshop.model.beverages;
 
 /**
- * A Ristretto
+ * A Americano
  *
  * @author colin
  */
-public class Ristretto extends AbstractBeverage {
+public class Americano extends AbstractBeverage {
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return 2.35;
+        return 2.10;
     }
 
 
@@ -26,6 +27,8 @@ public class Ristretto extends AbstractBeverage {
      */
     @Override
     public String description() {
-        return "Ristretto";
+        return "Americano";
     }
+
+
 }

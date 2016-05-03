@@ -3,29 +3,29 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model;
+package com.mycompany.coffeeshop.model.beverages;
 
 /**
- * A Single Shot Expresso
+ * Abstraction for a Beverage
  *
  * @author colin
  */
-public class SingleShotExpresso extends Expresso {
+public abstract class AbstractBeverage implements Beverage {
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return super.cost(); // by default we serve Expresso as single shot
+        return 0.0;
     }
-
 
     /**
      * {@inheritDoc}
      */
     @Override
     public String description() {
-        return "Single shot of " + super.description();
+        return "Ingredients:";
     }
 }
