@@ -10,7 +10,7 @@ package com.mycompany.coffeeshop.model.beverages;
  *
  * @author colin
  */
-public abstract class FilterCoffee extends AbstractBeverage {
+public class FilterCoffee extends AbstractBeverage {
 
     /**
      * {@inheritDoc}
