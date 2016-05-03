@@ -7,7 +7,7 @@ package com.mycompany.coffeeshop.core;
 
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 import com.mycompany.coffeeshop.model.beverages.Latte;
-import com.mycompany.coffeeshop.model.extras.SoyBeverage;
+import com.mycompany.coffeeshop.model.extras.Soy;
 
 /**
  * @author colin
@@ -41,7 +41,7 @@ public class Barista implements Runnable {
 
     private String makeRandomBeverage() {
         Beverage beverage = new Latte();
-        beverage = new SoyBeverage(beverage);
+        beverage = new Soy(beverage);
         System.out.println("Barista: made " + beverage.description());
         return beverage.description();
     }

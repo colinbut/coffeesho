@@ -8,38 +8,33 @@ package com.mycompany.coffeeshop.model.extras;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 
 /**
- * Milk
- *
  * @author colin
  */
-public class MilkBeverage extends BeverageExtras {
+public class WhipCream extends BeverageExtras {
 
     /**
      * Constructor
      *
      * @param beverage
      */
-    public MilkBeverage(Beverage beverage) {
+    public WhipCream(Beverage beverage) {
         super(beverage);
     }
-
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return super.cost() + 0.50; // 50P for milk? WTF!
+        return super.cost();
     }
-
 
     /**
      * {@inheritDoc}
      */
     @Override
     public String description() {
-        return super.description() + ", with Milk";
+        return super.description() + ", with Whipped Cream";
     }
-
 
 }

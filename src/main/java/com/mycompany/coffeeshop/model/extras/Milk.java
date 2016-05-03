@@ -8,19 +8,18 @@ package com.mycompany.coffeeshop.model.extras;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 
 /**
- * Chocolate Sprinkle
+ * Milk
  *
  * @author colin
  */
-public class ChocolateSprinkleBeverage extends BeverageExtras {
-
+public class Milk extends BeverageExtras {
 
     /**
      * Constructor
      *
      * @param beverage
      */
-    protected ChocolateSprinkleBeverage(Beverage beverage) {
+    public Milk(Beverage beverage) {
         super(beverage);
     }
 
@@ -30,7 +29,7 @@ public class ChocolateSprinkleBeverage extends BeverageExtras {
      */
     @Override
     public double cost() {
-        return super.cost();
+        return super.cost() + 0.50; // 50P for milk? WTF!
     }
 
 
@@ -39,7 +38,8 @@ public class ChocolateSprinkleBeverage extends BeverageExtras {
      */
     @Override
     public String description() {
-        return super.description() + ", with Chocolate Sprinkles";
+        return super.description() + ", with Milk";
     }
+
 
 }

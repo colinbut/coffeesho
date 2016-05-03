@@ -8,15 +8,19 @@ package com.mycompany.coffeeshop.model.extras;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 
 /**
+ * Chocolate Sprinkle
+ *
  * @author colin
  */
-public class SoyBeverage extends BeverageExtras {
+public class ChocolateSprinkle extends BeverageExtras {
+
 
     /**
+     * Constructor
      *
      * @param beverage
      */
-    public SoyBeverage(Beverage beverage) {
+    protected ChocolateSprinkle(Beverage beverage) {
         super(beverage);
     }
 
@@ -26,7 +30,7 @@ public class SoyBeverage extends BeverageExtras {
      */
     @Override
     public double cost() {
-        return super.cost() + 1.00; // Soy is much more expensive than just Milk!
+        return super.cost();
     }
 
 
@@ -34,8 +38,8 @@ public class SoyBeverage extends BeverageExtras {
      * {@inheritDoc}
      */
     @Override
-    public String description(){
-        return super.description() + ", with Soy Milk";
+    public String description() {
+        return super.description() + ", with Chocolate Sprinkles";
     }
 
 }

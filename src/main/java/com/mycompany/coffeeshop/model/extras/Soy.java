@@ -10,31 +10,32 @@ import com.mycompany.coffeeshop.model.beverages.Beverage;
 /**
  * @author colin
  */
-public class WhipCreamBeverage extends BeverageExtras {
+public class Soy extends BeverageExtras {
 
     /**
-     * Constructor
      *
      * @param beverage
      */
-    public WhipCreamBeverage(Beverage beverage) {
+    public Soy(Beverage beverage) {
         super(beverage);
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return super.cost();
+        return super.cost() + 1.00; // Soy is much more expensive than just Milk!
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public String description() {
-        return super.description() + ", with Whipped Cream";
+    public String description(){
+        return super.description() + ", with Soy Milk";
     }
 
 }
