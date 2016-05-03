@@ -5,6 +5,10 @@
  */
 package com.mycompany.coffeeshop.core;
 
+import com.mycompany.coffeeshop.model.Beverage;
+import com.mycompany.coffeeshop.model.Latte;
+import com.mycompany.coffeeshop.model.extras.SoyBeverage;
+
 /**
  * @author colin
  */
@@ -21,19 +25,25 @@ public class Barista implements Runnable {
         synchronized (lock) {
             if (coffeeMade != null) {
                 try {
-                    System.out.println("Coffee machine: " + " Waiting for waiter notification to deliver the coffee");
+                    System.out.println("Barista: " + " Waiting for waiter notification to deliver the coffee");
                     lock.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             } else {
-                coffeeMade = "Coffee No." + coffeeNumber++;
-                System.out.println("Coffee machine: " + "made " + coffeeMade);
+                coffeeMade = "Coffee No." + coffeeNumber++ + " - " + makeRandomBeverage();
                 lock.notifyAll();
-                System.out.println("Coffee machine: notifying the Waiter to pick the coffee");
+                System.out.println("Barista: notifying the Waiter to pick the coffee");
             }
 
         }
+    }
+
+    private String makeRandomBeverage() {
+        Beverage beverage = new Latte();
+        beverage = new SoyBeverage(beverage);
+        System.out.println("Barista: made " + beverage.description());
+        return beverage.description();
     }
 
 
