@@ -8,11 +8,11 @@ package com.mycompany.coffeeshop.model.beverages.coffee;
 import com.mycompany.coffeeshop.model.beverages.AbstractBeverage;
 
 /**
- * A Macchiatto
+ * A Macchiato
  *
  * @author colin
  */
-public class Macchiatto extends AbstractBeverage {
+public class Macchiato extends AbstractBeverage {
 
     /**
      * {@inheritDoc}
@@ -28,7 +28,7 @@ public class Macchiatto extends AbstractBeverage {
      */
     @Override
     public String description() {
-        return "Macchiatto";
+        return "Macchiato";
     }
 
 }
