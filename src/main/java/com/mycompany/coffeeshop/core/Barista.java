@@ -6,7 +6,7 @@
 package com.mycompany.coffeeshop.core;
 
 import com.mycompany.coffeeshop.model.beverages.Beverage;
-import com.mycompany.coffeeshop.model.beverages.Latte;
+import com.mycompany.coffeeshop.model.beverages.coffee.Latte;
 import com.mycompany.coffeeshop.model.extras.Soy;
 
 /**

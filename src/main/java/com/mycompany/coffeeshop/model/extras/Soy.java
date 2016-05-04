@@ -8,6 +8,8 @@ package com.mycompany.coffeeshop.model.extras;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 
 /**
+ * Soya
+ *
  * @author colin
  */
 public class Soy extends BeverageExtras {

@@ -3,40 +3,47 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model.extras;
+package com.mycompany.coffeeshop.model.extras.latte;
 
-import com.mycompany.coffeeshop.model.beverages.Beverage;
+import com.mycompany.coffeeshop.model.beverages.coffee.Latte;
 
 /**
- * Whipped Cream
+ * Abstraction for a flavour of Latte
+ *
+ * This is a Decorator
  *
  * @author colin
  */
-public class WhipCream extends BeverageExtras {
+public abstract class LatteFlavour extends Latte {
+
+
+    protected final Latte latte;
 
     /**
      * Constructor
      *
-     * @param beverage
+     * @param latte
      */
-    public WhipCream(Beverage beverage) {
-        super(beverage);
+    public LatteFlavour(Latte latte) {
+        this.latte = latte;
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return super.cost();
+        return latte.cost();
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public String description() {
-        return super.description() + ", with Whipped Cream";
+        return latte.description();
     }
 
 }

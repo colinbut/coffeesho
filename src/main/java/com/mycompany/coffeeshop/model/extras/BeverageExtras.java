@@ -10,6 +10,8 @@ import com.mycompany.coffeeshop.model.beverages.Beverage;
 /**
  * Representation for Extras for adding on to a Beverage
  *
+ * This is a decorator
+ *
  * @author colin
  */
 public abstract class BeverageExtras implements Beverage {

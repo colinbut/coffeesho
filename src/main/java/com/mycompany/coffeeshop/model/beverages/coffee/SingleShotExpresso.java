@@ -3,21 +3,21 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model.beverages;
+package com.mycompany.coffeeshop.model.beverages.coffee;
 
 /**
- * A Macchiatto
+ * A Single Shot Expresso
  *
  * @author colin
  */
-public class Macchiatto extends AbstractBeverage {
+public class SingleShotExpresso extends Expresso {
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return 3.45;
+        return super.cost(); // by default we serve Expresso as single shot
     }
 
 
@@ -26,7 +26,6 @@ public class Macchiatto extends AbstractBeverage {
      */
     @Override
     public String description() {
-        return "Macchiatto";
+        return "Single shot of " + super.description();
     }
-
 }

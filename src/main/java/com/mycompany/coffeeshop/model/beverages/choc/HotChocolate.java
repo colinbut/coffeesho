@@ -3,21 +3,24 @@
  * | Copyright © 2016 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.coffeeshop.model.beverages;
+package com.mycompany.coffeeshop.model.beverages.choc;
+
+import com.mycompany.coffeeshop.model.beverages.AbstractBeverage;
 
 /**
- * A Flat White
+ * A delicious cup of Hot Chocolate
  *
  * @author colin
  */
-public class FlatWhite extends AbstractBeverage {
+public class HotChocolate extends AbstractBeverage {
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public double cost() {
-        return 2.35;
+        return 2.00;
     }
 
 
@@ -26,6 +29,6 @@ public class FlatWhite extends AbstractBeverage {
      */
     @Override
     public String description() {
-        return "Flat White";
+        return "Hot Chocolate";
     }
 }
