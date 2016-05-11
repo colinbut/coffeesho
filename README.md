@@ -1,6 +1,6 @@
-## Coffee Shop
+# Coffee Shop
 
-# Table of Contents
+## Table of Contents
 
 * [Summary/Overview](#summary-overview)
 * [Team Members](#team-members)
