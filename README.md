@@ -16,7 +16,7 @@ Once the Barista has produced your beverage, the Waiter delivers it to you.
 (src/main/resources/coffee-shop.png)
 
 ### <a name="team-members"></a>Team Members
-* "Me" <colin.but@github.io>
+* Me <colin.but@outlook.com>
 
 ### <a name="project-demo"></a>Project Demo
 TBD
