@@ -22,4 +22,7 @@ Once the Barista has produced your beverage, the Waiter delivers it to you.
 TBD
 
 ### <a name="tech-tool"></a>Technology/Tool
-TBD
+* Java
+* Maven
+* Git
+
