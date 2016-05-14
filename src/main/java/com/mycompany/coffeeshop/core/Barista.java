@@ -9,6 +9,9 @@ import com.mycompany.coffeeshop.model.beverages.Beverage;
 import com.mycompany.coffeeshop.model.beverages.coffee.Latte;
 import com.mycompany.coffeeshop.model.extras.Soy;
 
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
 /**
  * @author colin
  */
@@ -17,6 +20,20 @@ public class Barista implements Runnable {
     static String coffeeMade;
     static final Object lock = new Object();
     private static int coffeeNumber = 1;
+
+    private BlockingQueue<String> orderQueue = new ArrayBlockingQueue<>(10);
+
+
+    public void makeBeverage(String beverage) {
+        try {
+            // using put - make the Cashier wait
+            // cashier - don't accept any more orders...
+            orderQueue.put(beverage);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     /**
      * Produces the coffee
@@ -31,7 +48,7 @@ public class Barista implements Runnable {
                     e.printStackTrace();
                 }
             } else {
-                coffeeMade = "Coffee No." + coffeeNumber++ + " - " + makeRandomBeverage();
+                coffeeMade = "Coffee No." + coffeeNumber++ + " - " + brewBeverage();
                 lock.notifyAll();
                 System.out.println("Barista: notifying the Waiter to pick the coffee");
             }
@@ -39,11 +56,31 @@ public class Barista implements Runnable {
         }
     }
 
+    /**
+     * Method no longer used
+     *
+     * @return a random beverage made
+     */
+    @Deprecated
     private String makeRandomBeverage() {
         Beverage beverage = new Latte();
         beverage = new Soy(beverage);
         System.out.println("Barista: made " + beverage.description());
         return beverage.description();
+    }
+
+
+
+    private String brewBeverage() {
+
+        try {
+            // Barista wait for orders to come in
+            String beverageToMake = orderQueue.take();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        throw new UnsupportedOperationException("Not Yet Finished Operation");
     }
 
 
@@ -53,6 +90,7 @@ public class Barista implements Runnable {
     @Override
     public void run() {
         while (true) {
+            System.out.println("Taking orders from queue of orders");
             System.out.println("Making another coffee now");
             makeCoffee();
             try {
