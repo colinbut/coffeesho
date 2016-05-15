@@ -12,7 +12,7 @@ package com.mycompany.coffeeshop.model;
  */
 public enum MenuItem {
 
-    // coffees
+    // lattes
     LATTE,
     CARAMEL_LATTE,
     ALMOND_LATTE,
@@ -23,11 +23,32 @@ public enum MenuItem {
     GINGERBREAD_LATTE,
     EGGNOG_LATTE,
 
+    //coffees
+    AMERICANO,
+    CAPPUCCINO,
+    CORTADO,
+    EXPRESSO,
+    SINGLE_SHOT_EXPRESSO,
+    DOUBLE_SHOT_EXPRESSO,
+    FLAT_WHITE,
+    MACCHIATO,
+    PICCINO,
+    RISTRETTO,
+    FILTER_COFFEE,
+
+    //Frapps
+    CARAMEL_FRAPPUCCINO,
+    CHOCOLATE_FRAPPUCCINO,
+    MOCHA_FRAPPUCCINO,
+    STRAWBERRIES_AND_CREAM_FRAPPUCCINO,
 
     // Tea
+    TEA,
 
     // Hot Choc
-    HOT_CHOCOLATE
+    HOT_CHOCOLATE,
+
+    WATER,
 
 
 }
