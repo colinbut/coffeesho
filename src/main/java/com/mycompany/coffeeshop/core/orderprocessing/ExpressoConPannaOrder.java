@@ -30,7 +30,7 @@ public class ExpressoConPannaOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.EXPRESSO_CON_PANNA);
+        barista.takeOrder(MenuItem.EXPRESSO_CON_PANNA);
     }
 
 }

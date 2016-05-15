@@ -29,7 +29,7 @@ public class FilterCoffeeOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.FILTER_COFFEE);
+        barista.takeOrder(MenuItem.FILTER_COFFEE);
     }
 
 }

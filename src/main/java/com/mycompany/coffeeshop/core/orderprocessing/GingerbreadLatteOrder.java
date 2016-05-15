@@ -31,6 +31,6 @@ public class GingerbreadLatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.GINGERBREAD_LATTE);
+        barista.takeOrder(MenuItem.GINGERBREAD_LATTE);
     }
 }

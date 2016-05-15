@@ -29,6 +29,6 @@ public class AmericanoOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.AMERICANO);
+        barista.takeOrder(MenuItem.AMERICANO);
     }
 }

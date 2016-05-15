@@ -32,11 +32,6 @@ public class CoffeeShop {
     }
 
 
-    public Barista getBarista() {
-        return barista;
-    }
-
-
     /**
      * Starts business
      */

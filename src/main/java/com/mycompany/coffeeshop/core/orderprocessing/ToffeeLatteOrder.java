@@ -29,7 +29,7 @@ public class ToffeeLatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.TOFFEE_LATTE);
+        barista.takeOrder(MenuItem.TOFFEE_LATTE);
     }
 
 }

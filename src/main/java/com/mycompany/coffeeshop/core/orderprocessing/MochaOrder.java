@@ -11,12 +11,16 @@ import com.mycompany.coffeeshop.model.MenuItem;
 /**
  * @author colin
  */
-public class HazelnutLatteOrder implements Order {
+public class MochaOrder implements Order {
 
     private Barista barista;
 
-
-    public HazelnutLatteOrder(Barista barista) {
+    /**
+     * Constructor
+     *
+     * @param barista
+     */
+    public MochaOrder(Barista barista) {
         this.barista = barista;
     }
 
@@ -25,6 +29,7 @@ public class HazelnutLatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.takeOrder(MenuItem.HAZELNUT_LATTE);
+        barista.takeOrder(MenuItem.MOCHA);
     }
+
 }

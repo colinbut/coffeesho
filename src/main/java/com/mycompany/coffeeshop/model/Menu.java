@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public final class Menu {
 
-    private static volatile Menu INSTANCE;
+    private static volatile Menu instance;
 
     private Map<Integer, MenuItem> menuOptions = new HashMap<>();
 
@@ -36,18 +36,19 @@ public final class Menu {
 
 
     public static Menu getInstance() {
-        if (INSTANCE == null) {
+        if (instance == null) {
             synchronized (Menu.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new Menu();
+                if (instance == null) {
+                    instance = new Menu();
                 }
             }
         }
-        return INSTANCE;
+        return instance;
     }
 
 
     public Map<Integer, MenuItem> getMenu() {
         return menuOptions;
     }
+
 }

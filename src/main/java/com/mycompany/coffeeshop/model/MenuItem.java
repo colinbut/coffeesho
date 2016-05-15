@@ -23,6 +23,7 @@ public enum MenuItem {
     MACCHIATO,
     PICCINO,
     RISTRETTO,
+    MOCHA,
     FILTER_COFFEE,
 
     // lattes
@@ -36,7 +37,7 @@ public enum MenuItem {
     GINGERBREAD_LATTE,
     EGGNOG_LATTE,
 
-    //Frapps
+    // Frappuccinos
     CARAMEL_FRAPPUCCINO,
     CHOCOLATE_FRAPPUCCINO,
     MOCHA_FRAPPUCCINO,

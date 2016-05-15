@@ -30,7 +30,7 @@ public class FlatWhiteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.FLAT_WHITE);
+        barista.takeOrder(MenuItem.FLAT_WHITE);
     }
 
 }

@@ -30,6 +30,6 @@ public class CappuccinoOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.CAPPUCCINO);
+        barista.takeOrder(MenuItem.CAPPUCCINO);
     }
 }

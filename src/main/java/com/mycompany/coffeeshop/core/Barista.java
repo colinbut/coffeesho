@@ -22,14 +22,14 @@ import java.util.concurrent.BlockingQueue;
  */
 public class Barista implements Runnable {
 
-    static String coffeeMade;
+    static String beverageMade;
     static final Object lock = new Object();
     private static int coffeeNumber = 1;
 
     private BlockingQueue<MenuItem> orderQueue = new ArrayBlockingQueue<>(10);
 
 
-    public void makeBeverage(MenuItem beverage) {
+    public void takeOrder(MenuItem beverage) {
         try {
             // using put - make the Cashier wait
             // cashier - don't accept any more orders...
@@ -41,21 +41,21 @@ public class Barista implements Runnable {
 
 
     /**
-     * Produces the coffee
+     * Produces the beverage
      */
-    private void makeCoffee() {
+    private void makeBeverage() {
         synchronized (lock) {
-            if (coffeeMade != null) {
+            if (beverageMade != null) {
                 try {
-                    System.out.println("Barista: " + " Waiting for waiter notification to deliver the coffee");
+                    System.out.println("Barista: " + " Waiting for waiter notification to deliver the beverage");
                     lock.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             } else {
-                coffeeMade = "Coffee No." + coffeeNumber++ + " - " + brewBeverage();
+                beverageMade = "Beverage No." + coffeeNumber++ + " - " + brewBeverage();
                 lock.notifyAll();
-                System.out.println("Barista: notifying the Waiter to pick the coffee");
+                System.out.println("Barista: notifying the Waiter to pick the beverage");
             }
 
         }
@@ -75,7 +75,11 @@ public class Barista implements Runnable {
     }
 
 
-
+    /**
+     * Makes the beverage
+     *
+     * @return
+     */
     private String brewBeverage() {
 
         try {
@@ -97,7 +101,7 @@ public class Barista implements Runnable {
         while (true) {
             System.out.println("Taking orders from queue of orders");
             System.out.println("Making another coffee now");
-            makeCoffee();
+            makeBeverage();
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {

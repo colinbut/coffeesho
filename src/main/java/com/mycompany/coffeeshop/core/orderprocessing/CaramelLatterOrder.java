@@ -30,6 +30,6 @@ public class CaramelLatterOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.CARAMEL_LATTE);
+        barista.takeOrder(MenuItem.CARAMEL_LATTE);
     }
 }

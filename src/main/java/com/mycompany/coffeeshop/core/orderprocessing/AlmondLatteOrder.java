@@ -31,7 +31,7 @@ public class AlmondLatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.ALMOND_LATTE);
+        barista.takeOrder(MenuItem.ALMOND_LATTE);
     }
 
 }

@@ -29,7 +29,7 @@ public class CortadoOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.CORTADO);
+        barista.takeOrder(MenuItem.CORTADO);
     }
 
 }

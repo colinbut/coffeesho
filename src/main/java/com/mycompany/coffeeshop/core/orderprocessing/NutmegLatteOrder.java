@@ -29,7 +29,7 @@ public class NutmegLatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.NUTMEG_LATTE);
+        barista.takeOrder(MenuItem.NUTMEG_LATTE);
     }
 
 }

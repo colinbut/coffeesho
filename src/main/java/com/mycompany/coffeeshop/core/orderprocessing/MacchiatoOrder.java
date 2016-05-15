@@ -30,7 +30,7 @@ public class MacchiatoOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.MACCHIATO);
+        barista.takeOrder(MenuItem.MACCHIATO);
     }
 
 }

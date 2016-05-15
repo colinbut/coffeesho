@@ -17,7 +17,7 @@ public class Waiter implements Runnable {
      */
     private void getCoffee() {
         synchronized (Barista.lock) {
-            if (Barista.coffeeMade == null) {
+            if (Barista.beverageMade == null) {
                 try {
                     System.out.println("Waiter: Will get new orders in the meantime while Coffee Machine makes the coffee");
                     Barista.lock.wait();
@@ -25,8 +25,8 @@ public class Waiter implements Runnable {
                     e.printStackTrace();
                 }
             } else {
-                System.out.println("Waiter: Delivering " + Barista.coffeeMade + " to customer");
-                Barista.coffeeMade = null;
+                System.out.println("Waiter: Delivering " + Barista.beverageMade + " to customer");
+                Barista.beverageMade = null;
                 Barista.lock.notifyAll();
                 System.out.println("Waiter: Notifying the coffee machine to make next one");
             }

@@ -29,7 +29,7 @@ public class CaramelFrappuccinoOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.CARAMEL_FRAPPUCCINO);
+        barista.takeOrder(MenuItem.CARAMEL_FRAPPUCCINO);
     }
 
 }

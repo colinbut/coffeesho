@@ -29,7 +29,7 @@ public class StrawberriesAndCreamFrappuccinoOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.STRAWBERRIES_AND_CREAM_FRAPPUCCINO);
+        barista.takeOrder(MenuItem.STRAWBERRIES_AND_CREAM_FRAPPUCCINO);
     }
 
 }

@@ -29,7 +29,7 @@ public class TeaOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.TEA);
+        barista.takeOrder(MenuItem.TEA);
     }
 
 }

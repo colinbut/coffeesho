@@ -30,7 +30,7 @@ public class VanillaLatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.VANILLA_LATTE);
+        barista.takeOrder(MenuItem.VANILLA_LATTE);
     }
 
 

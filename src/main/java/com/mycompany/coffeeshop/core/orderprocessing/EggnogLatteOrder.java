@@ -29,6 +29,6 @@ public class EggnogLatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.EGGNOG_LATTE);
+        barista.takeOrder(MenuItem.EGGNOG_LATTE);
     }
 }

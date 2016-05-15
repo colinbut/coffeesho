@@ -38,10 +38,23 @@ public class Customer implements Runnable {
      */
     @Override
     public void run() {
+        try {
+            Thread.sleep(ThreadLocalRandom.current().nextInt(5000));
+            orderDrinks();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Order drinks
+     */
+    void orderDrinks() {
         int randomNumberOfDrinks = ThreadLocalRandom.current().nextInt(MAX_NUMBER_OF_DRINKS);
         for (int i = 0; i < randomNumberOfDrinks; i++) {
             cashier.takeOrders(orderRandomBeverage());
         }
+        cashier.sendOrdersToBarista();
     }
 
 

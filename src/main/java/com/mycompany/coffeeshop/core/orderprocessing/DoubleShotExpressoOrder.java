@@ -30,7 +30,7 @@ public class DoubleShotExpressoOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.DOUBLE_SHOT_EXPRESSO);
+        barista.takeOrder(MenuItem.DOUBLE_SHOT_EXPRESSO);
     }
 
 }
