@@ -5,6 +5,7 @@
  */
 package com.mycompany.coffeeshop.core;
 
+import com.mycompany.coffeeshop.model.MenuItem;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 import com.mycompany.coffeeshop.model.beverages.coffee.Latte;
 import com.mycompany.coffeeshop.model.extras.Soy;
@@ -13,6 +14,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
+ * A barista
+ *
+ * They make beverages in a coffee shop
+ *
  * @author colin
  */
 public class Barista implements Runnable {
@@ -21,10 +26,10 @@ public class Barista implements Runnable {
     static final Object lock = new Object();
     private static int coffeeNumber = 1;
 
-    private BlockingQueue<String> orderQueue = new ArrayBlockingQueue<>(10);
+    private BlockingQueue<MenuItem> orderQueue = new ArrayBlockingQueue<>(10);
 
 
-    public void makeBeverage(String beverage) {
+    public void makeBeverage(MenuItem beverage) {
         try {
             // using put - make the Cashier wait
             // cashier - don't accept any more orders...
@@ -75,7 +80,7 @@ public class Barista implements Runnable {
 
         try {
             // Barista wait for orders to come in
-            String beverageToMake = orderQueue.take();
+            MenuItem beverageToMake = orderQueue.take();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

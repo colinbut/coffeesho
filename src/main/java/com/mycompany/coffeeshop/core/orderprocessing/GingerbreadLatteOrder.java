@@ -5,34 +5,32 @@
  */
 package com.mycompany.coffeeshop.core.orderprocessing;
 
+
 import com.mycompany.coffeeshop.core.Barista;
 import com.mycompany.coffeeshop.model.MenuItem;
 
 /**
- * An order to make a latte beverage
- *
- * Note* Command of the Command Pattern
- *
  * @author colin
  */
-public class LatteOrder implements Order {
+public class GingerbreadLatteOrder implements Order {
 
     private Barista barista;
 
     /**
      * Constructor
      *
-     * @param barista the barista to brew beverage
+     * @param barista
      */
-    public LatteOrder(Barista barista) {
+    public GingerbreadLatteOrder(Barista barista) {
         this.barista = barista;
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.LATTE);
+        barista.makeBeverage(MenuItem.GINGERBREAD_LATTE);
     }
 }

@@ -19,7 +19,7 @@ public class CoffeeShop {
 
     private Barista barista = new Barista();
     private Waiter waiter = new Waiter();
-    private Cashier cashier = new Cashier();
+    private Cashier cashier;
 
     private Customer customer;
 
@@ -27,6 +27,7 @@ public class CoffeeShop {
      * Constructor
      */
     public CoffeeShop() {
+        cashier = new Cashier(barista);
         customer = new Customer(cashier);
     }
 

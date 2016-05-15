@@ -9,22 +9,18 @@ import com.mycompany.coffeeshop.core.Barista;
 import com.mycompany.coffeeshop.model.MenuItem;
 
 /**
- * An order to make a latte beverage
- *
- * Note* Command of the Command Pattern
- *
  * @author colin
  */
-public class LatteOrder implements Order {
+public class CortadoOrder implements Order {
 
     private Barista barista;
 
     /**
      * Constructor
      *
-     * @param barista the barista to brew beverage
+     * @param barista
      */
-    public LatteOrder(Barista barista) {
+    public CortadoOrder(Barista barista) {
         this.barista = barista;
     }
 
@@ -33,6 +29,7 @@ public class LatteOrder implements Order {
      */
     @Override
     public void makeBeverage() {
-        barista.makeBeverage(MenuItem.LATTE);
+        barista.makeBeverage(MenuItem.CORTADO);
     }
+
 }
