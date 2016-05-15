@@ -13,14 +13,25 @@ import java.util.Map;
  *
  * @author colin
  */
-public class Menu {
+public final class Menu {
 
     private static volatile Menu INSTANCE;
 
-    private Map<Integer, String> menuOptions = new HashMap<>();
+    private Map<Integer, MenuItem> menuOptions = new HashMap<>();
+
 
     private Menu(){
-        menuOptions.put(1, "Latte");
+        init();
+    }
+
+
+    /**
+     * Populates the menu with items
+     */
+    private void init() {
+        for (int i = 1; i <= MenuItem.values().length; i++) {
+            menuOptions.put(i, MenuItem.values()[i]);
+        }
     }
 
 
@@ -36,7 +47,7 @@ public class Menu {
     }
 
 
-    public Map<Integer, String> getMenu() {
+    public Map<Integer, MenuItem> getMenu() {
         return menuOptions;
     }
 }

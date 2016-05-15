@@ -7,6 +7,7 @@ package com.mycompany.coffeeshop.core;
 
 import com.mycompany.coffeeshop.core.orderprocessing.LatteOrder;
 import com.mycompany.coffeeshop.core.orderprocessing.Order;
+import com.mycompany.coffeeshop.model.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +38,17 @@ public class Cashier {
      *
      * @param beverageChoice the choice of beverages
      */
-    void takeOrders(String beverageChoice) {
-        if (beverageChoice.equals("Latte"))
-            orders.add(new LatteOrder(barista));
+    void takeOrders(MenuItem beverageChoice) {
+
+        switch (beverageChoice){
+            case LATTE:
+                orders.add(new LatteOrder(barista));
+                break;
+            case ALMOND_LATTE:
+                break;
+            default:
+        }
+
     }
 
 

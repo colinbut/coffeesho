@@ -12,17 +12,6 @@ package com.mycompany.coffeeshop.model;
  */
 public enum MenuItem {
 
-    // lattes
-    LATTE,
-    CARAMEL_LATTE,
-    ALMOND_LATTE,
-    HAZELNUT_LATTE,
-    TOFFEE_LATTE,
-    VANILLA_LATTE,
-    NUTMEG_LATTE,
-    GINGERBREAD_LATTE,
-    EGGNOG_LATTE,
-
     //coffees
     AMERICANO,
     CAPPUCCINO,
@@ -35,6 +24,17 @@ public enum MenuItem {
     PICCINO,
     RISTRETTO,
     FILTER_COFFEE,
+
+    // lattes
+    LATTE,
+    CARAMEL_LATTE,
+    ALMOND_LATTE,
+    HAZELNUT_LATTE,
+    TOFFEE_LATTE,
+    VANILLA_LATTE,
+    NUTMEG_LATTE,
+    GINGERBREAD_LATTE,
+    EGGNOG_LATTE,
 
     //Frapps
     CARAMEL_FRAPPUCCINO,

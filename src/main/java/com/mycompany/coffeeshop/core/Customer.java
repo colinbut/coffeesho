@@ -6,6 +6,7 @@
 package com.mycompany.coffeeshop.core;
 
 import com.mycompany.coffeeshop.model.Menu;
+import com.mycompany.coffeeshop.model.MenuItem;
 
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
@@ -49,8 +50,8 @@ public class Customer implements Runnable {
      *
      * @return the chosen beverage menu number
      */
-    private String orderRandomBeverage() {
-        Map<Integer, String> menu = Menu.getInstance().getMenu();
+    private MenuItem orderRandomBeverage() {
+        Map<Integer, MenuItem> menu = Menu.getInstance().getMenu();
         int randomChoice = ThreadLocalRandom.current().nextInt(menu.size());
         return menu.get(randomChoice);
     }
