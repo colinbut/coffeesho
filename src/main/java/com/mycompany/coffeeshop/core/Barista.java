@@ -5,6 +5,8 @@
  */
 package com.mycompany.coffeeshop.core;
 
+import com.mycompany.coffeeshop.CoffeeShop;
+import com.mycompany.coffeeshop.core.beverageproduction.*;
 import com.mycompany.coffeeshop.model.MenuItem;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 import com.mycompany.coffeeshop.model.beverages.coffee.Latte;
@@ -26,9 +28,35 @@ public class Barista implements Runnable {
     static final Object lock = new Object();
     private static int coffeeNumber = 1;
 
+    private BeverageFactory coffeeMachine;
+    private BeverageFactory kettle;
+    private BeverageFactory tap;
+    private BeverageFactory icedDrinksMixer;
+    private BeverageFactory hotChocolateMachine;
+
     private BlockingQueue<MenuItem> orderQueue = new ArrayBlockingQueue<>(10);
 
+    /**
+     * Constructor
+     */
+    public Barista() {
+        coffeeMachine = CoffeeShop.getCoffeeMachine();
+        kettle = CoffeeShop.getKettle();
+        tap = CoffeeShop.getWaterTap();
+        icedDrinksMixer = CoffeeShop.getIcedDrinksMixer();
+        hotChocolateMachine = CoffeeShop.getHotChocolateMachine();
+    }
 
+
+    /**
+     * Takes beverage orders from the Cashier
+     *
+     * The caller (Cashier) expected to invoke this method which
+     * will insert the beverage into the queue of orders for this barista to
+     * brew
+     *
+     * @param beverage the beverage to make
+     */
     public void takeOrder(MenuItem beverage) {
         try {
             // using put - make the Cashier wait
@@ -53,7 +81,8 @@ public class Barista implements Runnable {
                     e.printStackTrace();
                 }
             } else {
-                beverageMade = "Beverage No." + coffeeNumber++ + " - " + brewBeverage();
+                Beverage beverage = brewBeverage();
+                beverageMade = "Beverage No." + coffeeNumber++ + " - " + beverage.description();
                 lock.notifyAll();
                 System.out.println("Barista: notifying the Waiter to pick the beverage");
             }
@@ -80,16 +109,31 @@ public class Barista implements Runnable {
      *
      * @return
      */
-    private String brewBeverage() {
+    private Beverage brewBeverage() {
+
+        Beverage beverage = null;
 
         try {
             // Barista wait for orders to come in
             MenuItem beverageToMake = orderQueue.take();
+
+            if (Beverage.isCoffee(beverageToMake)) {
+                beverage = coffeeMachine.produceBeverage(beverageToMake);
+            } else if (Beverage.isHotChocolate(beverageToMake)) {
+                beverage = hotChocolateMachine.produceBeverage(beverageToMake);
+            } else if (Beverage.isTea(beverageToMake)) {
+                beverage = kettle.produceBeverage(beverageToMake);
+            } else if (Beverage.isWater(beverageToMake)) {
+                beverage = tap.produceBeverage(beverageToMake);
+            } else if (Beverage.isFrappuccino(beverageToMake)) {
+                beverage = icedDrinksMixer.produceBeverage(beverageToMake);
+            }
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        throw new UnsupportedOperationException("Not Yet Finished Operation");
+        return beverage;
     }
 
 

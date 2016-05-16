@@ -4,6 +4,7 @@ import com.mycompany.coffeeshop.core.Barista;
 import com.mycompany.coffeeshop.core.Cashier;
 import com.mycompany.coffeeshop.core.Customer;
 import com.mycompany.coffeeshop.core.Waiter;
+import com.mycompany.coffeeshop.core.beverageproduction.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,12 +24,25 @@ public class CoffeeShop {
 
     private Customer customer;
 
+    private static BeverageFactory coffeeMachine;
+    private static BeverageFactory kettle;
+    private static BeverageFactory waterTap;
+    private static BeverageFactory hotChocolateMachine;
+    private static BeverageFactory icedDrinksMixer;
+
+
     /**
      * Constructor
      */
     public CoffeeShop() {
         cashier = new Cashier(barista);
         customer = new Customer(cashier);
+
+        coffeeMachine = new CoffeeMachine();
+        kettle = new Kettle();
+        waterTap = new WaterTap();
+        hotChocolateMachine = new HotChocolateMachine();
+        icedDrinksMixer = new IcedDrinksMixer();
     }
 
 
@@ -42,7 +56,25 @@ public class CoffeeShop {
         new Thread(customer).start();
     }
 
+    public static BeverageFactory getHotChocolateMachine() {
+        return hotChocolateMachine;
+    }
 
+    public static BeverageFactory getIcedDrinksMixer() {
+        return icedDrinksMixer;
+    }
+
+    public static BeverageFactory getKettle() {
+        return kettle;
+    }
+
+    public static BeverageFactory getWaterTap() {
+        return waterTap;
+    }
+
+    public static BeverageFactory getCoffeeMachine() {
+        return coffeeMachine;
+    }
 
     /**
      * Main program

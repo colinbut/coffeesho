@@ -49,7 +49,7 @@ public enum MenuItem {
     // Hot Choc
     HOT_CHOCOLATE,
 
-    WATER,
+    WATER
 
 
 }

@@ -15,7 +15,7 @@ public class Waiter implements Runnable {
     /**
      * Retrieves the coffee from the coffee machine
      */
-    private void getCoffee() {
+    private void deliverBeverage() {
         synchronized (Barista.lock) {
             if (Barista.beverageMade == null) {
                 try {
@@ -43,7 +43,7 @@ public class Waiter implements Runnable {
         // constantly delivering coffee to customers
         // it's a busy coffee shop (lunch hour :) )
         while (true) {
-            getCoffee();
+            deliverBeverage();
         }
     }
 
