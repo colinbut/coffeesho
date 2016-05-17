@@ -31,18 +31,20 @@ public class CoffeeShop {
     private static BeverageFactory icedDrinksMixer;
 
 
+    static {
+        coffeeMachine = new CoffeeMachine();
+        kettle = new Kettle();
+        waterTap = new WaterTap();
+        hotChocolateMachine = new HotChocolateMachine();
+        icedDrinksMixer = new IcedDrinksMixer();
+    }
+
     /**
      * Constructor
      */
     public CoffeeShop() {
         cashier = new Cashier(barista);
         customer = new Customer(cashier);
-
-        coffeeMachine = new CoffeeMachine();
-        kettle = new Kettle();
-        waterTap = new WaterTap();
-        hotChocolateMachine = new HotChocolateMachine();
-        icedDrinksMixer = new IcedDrinksMixer();
     }
 
 

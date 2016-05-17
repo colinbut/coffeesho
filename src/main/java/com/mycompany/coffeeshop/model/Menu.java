@@ -29,7 +29,7 @@ public final class Menu {
      * Populates the menu with items
      */
     private void init() {
-        for (int i = 1; i <= MenuItem.values().length; i++) {
+        for (int i = 1; i <= MenuItem.values().length - 1; i++) {
             menuOptions.put(i, MenuItem.values()[i]);
         }
     }
