@@ -25,4 +25,5 @@ TBD
 * Java
 * Maven
 * Git
+* Travis CI
 
