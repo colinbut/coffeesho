@@ -17,7 +17,7 @@ import com.mycompany.coffeeshop.model.beverages.frappuccino.StrawberriesAndCream
  *
  * @author colin
  */
-public class IcedDrinksMixer implements BeverageFactory{
+public class IcedDrinksMixer implements BeverageFactory {
 
     /**
      * {@inheritDoc}

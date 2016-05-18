@@ -7,7 +7,12 @@ package com.mycompany.coffeeshop.core.beverageproduction;
 
 import com.mycompany.coffeeshop.model.MenuItem;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
+import com.mycompany.coffeeshop.model.beverages.tea.ChaiTea;
+import com.mycompany.coffeeshop.model.beverages.tea.EnglishBreakfast;
 
+/**
+ * @author colin
+ */
 public class Kettle implements BeverageFactory {
 
 
@@ -17,10 +22,17 @@ public class Kettle implements BeverageFactory {
     @Override
     public Beverage produceBeverage(MenuItem menuItem) {
 
-        if (menuItem != MenuItem.TEA) {
+        Beverage beverage;
+
+        if (menuItem == MenuItem.ENGLISH_BREAKFAST_TEA) {
+            beverage = new EnglishBreakfast();
+        } else if (menuItem == MenuItem.CHAI_TEA) {
+            beverage = new ChaiTea();
+        } else  {
             throw new IllegalArgumentException();
         }
-        return null;
-        //return new Tea();
+
+        return beverage;
+
     }
 }

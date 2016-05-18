@@ -45,6 +45,8 @@ public enum MenuItem {
 
     // Tea
     TEA,
+    ENGLISH_BREAKFAST_TEA,
+    CHAI_TEA,
 
     // Hot Choc
     HOT_CHOCOLATE,
