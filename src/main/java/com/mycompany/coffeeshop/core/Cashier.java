@@ -115,8 +115,11 @@ public class Cashier {
             case STRAWBERRIES_AND_CREAM_FRAPPUCCINO:
                 orders.add(new StrawberriesAndCreamFrappuccinoOrder(barista));
                 break;
-            case TEA:
-                orders.add(new TeaOrder(barista));
+            case ENGLISH_BREAKFAST_TEA:
+                orders.add(new EnglishBreakfastTeaOrder(barista));
+                break;
+            case CHAI_TEA:
+                orders.add(new ChaiTeaOrder(barista));
                 break;
             case HOT_CHOCOLATE:
                 orders.add(new HotChocolateOrder(barista));
@@ -125,6 +128,7 @@ public class Cashier {
                 orders.add(new WaterOrder(barista));
                 break;
             default:
+                break;
         }
 
     }

@@ -11,25 +11,26 @@ import com.mycompany.coffeeshop.model.MenuItem;
 /**
  * @author colin
  */
-public class TeaOrder implements Order {
+public class ChaiTeaOrder implements Order {
 
     private Barista barista;
+
 
     /**
      * Constructor
      *
      * @param barista
      */
-    public TeaOrder(Barista barista) {
+    public ChaiTeaOrder(Barista barista) {
         this.barista = barista;
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void makeBeverage() {
-        barista.takeOrder(MenuItem.TEA);
+        barista.takeOrder(MenuItem.CHAI_TEA);
     }
-
 }
