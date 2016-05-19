@@ -5,6 +5,8 @@
  */
 package com.mycompany.coffeeshop.model;
 
+import java.math.BigDecimal;
+
 /**
  * Representation of a menu item on the menu
  *
@@ -53,13 +55,13 @@ public enum MenuItem {
 
     WATER(0.00);
 
-    private double price;
+    private BigDecimal price;
 
     MenuItem(double price) {
-        this.price = price;
+        this.price = BigDecimal.valueOf(price);
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
