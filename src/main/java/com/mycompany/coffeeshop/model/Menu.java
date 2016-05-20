@@ -11,6 +11,8 @@ import java.util.Map;
 /**
  * The menu
  *
+ * Singleton design pattern
+ *
  * @author colin
  */
 public final class Menu {
@@ -34,7 +36,11 @@ public final class Menu {
         }
     }
 
-
+    /**
+     * Returns the one and only ONE instance of this class
+     *
+     * @return instance
+     */
     public static Menu getInstance() {
         if (instance == null) {
             synchronized (Menu.class) {

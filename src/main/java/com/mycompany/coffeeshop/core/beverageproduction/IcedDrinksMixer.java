@@ -13,7 +13,7 @@ import com.mycompany.coffeeshop.model.beverages.frappuccino.MochaFrappuccino;
 import com.mycompany.coffeeshop.model.beverages.frappuccino.StrawberriesAndCreamFrappuccino;
 
 /**
- * A mixer
+ * A mixer that makes iced cold drinks. for.e.g. Frappuccino
  *
  * @author colin
  */

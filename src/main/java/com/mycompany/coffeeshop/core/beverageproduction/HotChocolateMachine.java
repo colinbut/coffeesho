@@ -10,6 +10,8 @@ import com.mycompany.coffeeshop.model.beverages.Beverage;
 import com.mycompany.coffeeshop.model.beverages.choc.HotChocolate;
 
 /**
+ * A machine that makes a cup of Hot Chocolate
+ *
  * @author colin
  */
 public class HotChocolateMachine implements BeverageFactory {

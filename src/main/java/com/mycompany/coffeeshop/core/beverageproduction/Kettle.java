@@ -11,6 +11,8 @@ import com.mycompany.coffeeshop.model.beverages.tea.ChaiTea;
 import com.mycompany.coffeeshop.model.beverages.tea.EnglishBreakfast;
 
 /**
+ * A classic Kettle that just boils some hot water
+ *
  * @author colin
  */
 public class Kettle implements BeverageFactory {
