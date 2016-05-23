@@ -13,7 +13,9 @@
 
 .settings/*
 .idea/*
-target/* 
+build/*
+.gradle/*
+
 
 # Packages #
 ############
