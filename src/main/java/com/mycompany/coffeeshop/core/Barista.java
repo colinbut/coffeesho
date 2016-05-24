@@ -127,6 +127,8 @@ public class Barista implements Runnable {
                 beverage = tap.produceBeverage(beverageToMake);
             } else if (Beverage.isFrappuccino(beverageToMake)) {
                 beverage = icedDrinksMixer.produceBeverage(beverageToMake);
+            } else {
+                throw new IllegalStateException("Internal orders queue somehow has an invalid menu item");
             }
 
         } catch (InterruptedException e) {

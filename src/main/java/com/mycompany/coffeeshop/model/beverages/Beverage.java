@@ -5,6 +5,7 @@
  */
 package com.mycompany.coffeeshop.model.beverages;
 
+import com.mycompany.coffeeshop.model.Menu;
 import com.mycompany.coffeeshop.model.MenuItem;
 
 import java.util.HashSet;
@@ -59,6 +60,13 @@ public interface Beverage {
         }
     };
 
+    Set<MenuItem> teas = new HashSet<MenuItem>(){
+        {
+            add(MenuItem.ENGLISH_BREAKFAST_TEA);
+            add(MenuItem.CHAI_TEA);
+        }
+    };
+
 
     static boolean isFrappuccino(MenuItem menuItem) {
         return frappuccinos.contains(menuItem);
@@ -70,7 +78,7 @@ public interface Beverage {
 
 
     static boolean isTea(MenuItem menuItem) {
-        return menuItem.equals(MenuItem.TEA);
+        return teas.contains(menuItem);
     }
 
 
