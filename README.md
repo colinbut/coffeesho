@@ -26,4 +26,4 @@ TBD
 * Maven
 * Git
 * Travis CI
-
+* Logback
