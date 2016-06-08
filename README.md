@@ -13,7 +13,7 @@ In a typical coffee shop you as a Customer go inside. You order. The cashier tak
 Once the Barista has produced your beverage, the Waiter delivers it to you. 
 
 ![Image of a Coffee Shop]
-(src/main/resources/coffee-shop.png)
+(src/main/resources/etc/coffee-shop.png)
 
 ### <a name="team-members"></a>Team Members
 * Me <colin.but@outlook.com>
