@@ -7,7 +7,7 @@
     </layout>
   </appender>
 
-  <logger name="com.mycompany.coffeeshop" level="INFO"/>
+  <logger name="com.mycompany.coffeeshop" level="DEBUG"/>
 
 
   <root level="debug">
