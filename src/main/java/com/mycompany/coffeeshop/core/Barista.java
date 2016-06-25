@@ -99,19 +99,6 @@ public class Barista implements Runnable {
         }
     }
 
-    /**
-     * Method no longer used
-     *
-     * @return a random beverage made
-     */
-    @Deprecated
-    private String makeRandomBeverage() {
-        Beverage beverage = new Latte();
-        beverage = new Soy(beverage);
-        System.out.println("Barista: made " + beverage.description());
-        return beverage.description();
-    }
-
 
     /**
      * Makes the beverage
