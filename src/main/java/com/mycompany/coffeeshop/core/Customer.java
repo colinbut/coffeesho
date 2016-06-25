@@ -45,12 +45,14 @@ public class Customer implements Runnable {
      */
     @Override
     public void run() {
-        try {
-            Thread.sleep(TIME_BETWEEN_ORDER_MS);
-            LOGGER.info("Customer: ordering drinks after {} have passed", TIME_BETWEEN_ORDER_MS);
-            orderDrinks();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while (true) {
+            try {
+                Thread.sleep(TIME_BETWEEN_ORDER_MS);
+                LOGGER.info("Customer: ordering drinks after {} have passed", TIME_BETWEEN_ORDER_MS);
+                orderDrinks();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

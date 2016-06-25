@@ -48,6 +48,7 @@ public interface Beverage {
             add(MenuItem.EGGNOG_LATTE);
             add(MenuItem.VANILLA_LATTE);
             add(MenuItem.GINGERBREAD_LATTE);
+            add(MenuItem.TOFFEE_LATTE);
             add(MenuItem.FILTER_COFFEE);
         }
     };
