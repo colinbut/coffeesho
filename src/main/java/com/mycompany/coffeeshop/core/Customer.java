@@ -7,6 +7,8 @@ package com.mycompany.coffeeshop.core;
 
 import com.mycompany.coffeeshop.model.Menu;
 import com.mycompany.coffeeshop.model.MenuItem;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,10 +20,15 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Customer implements Runnable {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(Customer.class);
+
     private final Cashier cashier;
 
     // (possible) maximum of drinks that a customer wants to order
     private static final int MAX_NUMBER_OF_DRINKS = 5;
+
+    // the time between each drink order in milliseconds
+    private static final int TIME_BETWEEN_ORDER_MS = 5000;
 
     /**
      * Constructor
@@ -39,7 +46,8 @@ public class Customer implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(ThreadLocalRandom.current().nextInt(5000));
+            Thread.sleep(TIME_BETWEEN_ORDER_MS);
+            LOGGER.info("Customer: ordering drinks after {} have passed", TIME_BETWEEN_ORDER_MS);
             orderDrinks();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -50,9 +58,13 @@ public class Customer implements Runnable {
      * Order drinks
      */
     void orderDrinks() {
-        int randomNumberOfDrinks = ThreadLocalRandom.current().nextInt(MAX_NUMBER_OF_DRINKS);
+        int randomNumberOfDrinks = ThreadLocalRandom.current().nextInt(1, MAX_NUMBER_OF_DRINKS);
+        LOGGER.debug("Customer: ordering {} drinks", randomNumberOfDrinks);
         for (int i = 0; i < randomNumberOfDrinks; i++) {
-            cashier.takeOrders(orderRandomBeverage());
+            MenuItem beverageToOrder = orderRandomBeverage();
+            LOGGER.info("Customer: decided ordering {}", beverageToOrder);
+
+            cashier.takeOrders(beverageToOrder);
         }
         cashier.sendOrdersToBarista();
     }
@@ -65,7 +77,8 @@ public class Customer implements Runnable {
      */
     private MenuItem orderRandomBeverage() {
         Map<Integer, MenuItem> menu = Menu.getInstance().getMenu();
-        int randomChoice = ThreadLocalRandom.current().nextInt(menu.size());
+        int randomChoice = ThreadLocalRandom.current().nextInt(1,menu.size());
+        LOGGER.debug("Customer: picking menu number: {}", randomChoice);
         return menu.get(randomChoice);
     }
 }

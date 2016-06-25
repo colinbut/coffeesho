@@ -7,6 +7,8 @@ package com.mycompany.coffeeshop.core;
 
 import com.mycompany.coffeeshop.core.orderprocessing.*;
 import com.mycompany.coffeeshop.model.MenuItem;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,8 @@ import java.util.List;
  * @author colin
  */
 public class Cashier {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Cashier.class);
 
     private List<Order> orders = new ArrayList<>();
 
@@ -38,6 +42,8 @@ public class Cashier {
      * @param beverageChoice the choice of beverages
      */
     void takeOrders(MenuItem beverageChoice) {
+
+        LOGGER.info("Cashier: Customer placed order {}", beverageChoice);
 
         switch (beverageChoice){
             case AMERICANO:
@@ -138,6 +144,9 @@ public class Cashier {
      * Sends the customer orders to the Barista
      */
     void sendOrdersToBarista() {
+
+        LOGGER.info("Cashier: sending orders to Barista");
+
         for(Order order : orders) {
             order.makeBeverage();
         }

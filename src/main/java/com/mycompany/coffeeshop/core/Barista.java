@@ -11,6 +11,8 @@ import com.mycompany.coffeeshop.model.MenuItem;
 import com.mycompany.coffeeshop.model.beverages.Beverage;
 import com.mycompany.coffeeshop.model.beverages.coffee.Latte;
 import com.mycompany.coffeeshop.model.extras.Soy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -23,6 +25,8 @@ import java.util.concurrent.BlockingQueue;
  * @author colin
  */
 public class Barista implements Runnable {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Barista.class);
 
     static String beverageMade;
     static final Object lock = new Object();
@@ -61,6 +65,7 @@ public class Barista implements Runnable {
         try {
             // using put - make the Cashier wait
             // cashier - don't accept any more orders...
+            LOGGER.info("Barista: Cashier sent order - {}", beverage);
             orderQueue.put(beverage);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -75,7 +80,8 @@ public class Barista implements Runnable {
         synchronized (lock) {
             if (beverageMade != null) {
                 try {
-                    System.out.println("Barista: " + " Waiting for waiter notification to deliver the beverage");
+                    //System.out.println("Barista: Waiting for waiter notification to deliver the beverage");
+                    LOGGER.info("Barista: Waiting for waiter notification to deliver the beverage");
                     lock.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -83,8 +89,11 @@ public class Barista implements Runnable {
             } else {
                 Beverage beverage = brewBeverage();
                 beverageMade = "Beverage No." + coffeeNumber++ + " - " + beverage.description();
+                LOGGER.debug("Barista: Made beverage: {}", beverageMade);
+
                 lock.notifyAll();
-                System.out.println("Barista: notifying the Waiter to pick the beverage");
+                //System.out.println("Barista: notifying the Waiter to pick the beverage");
+                LOGGER.info("Barista: notifying the Waiter to pick up the beverage");
             }
 
         }
@@ -117,6 +126,8 @@ public class Barista implements Runnable {
             // Barista wait for orders to come in
             MenuItem beverageToMake = orderQueue.take();
 
+            LOGGER.debug("Barista: Taking order {} from orderQueue", beverageToMake);
+
             if (Beverage.isCoffee(beverageToMake)) {
                 beverage = coffeeMachine.produceBeverage(beverageToMake);
             } else if (Beverage.isHotChocolate(beverageToMake)) {
@@ -135,6 +146,8 @@ public class Barista implements Runnable {
             e.printStackTrace();
         }
 
+        LOGGER.info("Barista: Made {}", beverage);
+
         return beverage;
     }
 
@@ -145,8 +158,9 @@ public class Barista implements Runnable {
     @Override
     public void run() {
         while (true) {
-            System.out.println("Taking orders from queue of orders");
-            System.out.println("Making another coffee now");
+            //System.out.println("Taking orders from queue of orders");
+            //System.out.println("Making another beverage now");
+
             makeBeverage();
             try {
                 Thread.sleep(5000);
