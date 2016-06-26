@@ -28,4 +28,9 @@ public abstract class AbstractBeverage implements Beverage {
     public String description() {
         return "Ingredients:";
     }
+
+    @Override
+    public String toString() {
+        return description();
+    }
 }

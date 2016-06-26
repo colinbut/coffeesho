@@ -14,7 +14,6 @@ import com.mycompany.coffeeshop.model.beverages.AbstractBeverage;
  */
 public class Americano extends AbstractBeverage {
 
-
     /**
      * {@inheritDoc}
      */
@@ -31,6 +30,5 @@ public class Americano extends AbstractBeverage {
     public String description() {
         return "Americano";
     }
-
 
 }
