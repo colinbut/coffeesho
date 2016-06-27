@@ -22,9 +22,9 @@ public class Cashier {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Cashier.class);
 
-    private List<Order> orders = new ArrayList<>();
+    private final List<Order> orders = new ArrayList<>();
 
-    private Barista barista;
+    private final Barista barista;
 
     /**
      * Constructor

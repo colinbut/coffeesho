@@ -19,7 +19,7 @@ public final class Menu {
 
     private static volatile Menu instance;
 
-    private Map<Integer, MenuItem> menuOptions = new HashMap<>();
+    private final Map<Integer, MenuItem> menuOptions = new HashMap<>();
 
 
     private Menu(){

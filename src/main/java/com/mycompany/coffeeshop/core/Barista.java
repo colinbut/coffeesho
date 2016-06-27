@@ -32,13 +32,13 @@ public class Barista implements Runnable {
     static final Object lock = new Object();
     private static int coffeeNumber = 1;
 
-    private BeverageFactory coffeeMachine;
-    private BeverageFactory kettle;
-    private BeverageFactory tap;
-    private BeverageFactory icedDrinksMixer;
-    private BeverageFactory hotChocolateMachine;
+    private final BeverageFactory coffeeMachine;
+    private final BeverageFactory kettle;
+    private final BeverageFactory tap;
+    private final BeverageFactory icedDrinksMixer;
+    private final BeverageFactory hotChocolateMachine;
 
-    private BlockingQueue<MenuItem> orderQueue = new ArrayBlockingQueue<>(10);
+    private final BlockingQueue<MenuItem> orderQueue = new ArrayBlockingQueue<>(10);
 
     /**
      * Constructor

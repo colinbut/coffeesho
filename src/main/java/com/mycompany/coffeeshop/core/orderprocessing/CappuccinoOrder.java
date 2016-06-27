@@ -13,7 +13,7 @@ import com.mycompany.coffeeshop.model.MenuItem;
  */
 public class CappuccinoOrder implements Order {
 
-    private Barista barista;
+    private final Barista barista;
 
     /**
      * Constructor

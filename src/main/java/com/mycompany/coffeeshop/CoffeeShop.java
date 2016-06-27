@@ -11,11 +11,6 @@ import com.mycompany.coffeeshop.core.Customer;
 import com.mycompany.coffeeshop.core.Waiter;
 import com.mycompany.coffeeshop.core.beverageproduction.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Coffee Shop
  *
@@ -23,11 +18,11 @@ import java.util.Map;
  */
 public class CoffeeShop {
 
-    private Barista barista = new Barista();
-    private Waiter waiter = new Waiter();
-    private Cashier cashier;
+    private final Barista barista = new Barista();
+    private final Waiter waiter = new Waiter();
+    private final Cashier cashier;
 
-    private Customer customer;
+    private final Customer customer;
 
     private static BeverageFactory coffeeMachine;
     private static BeverageFactory kettle;
