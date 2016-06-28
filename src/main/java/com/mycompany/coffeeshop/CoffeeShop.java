@@ -10,6 +10,8 @@ import com.mycompany.coffeeshop.core.Cashier;
 import com.mycompany.coffeeshop.core.Customer;
 import com.mycompany.coffeeshop.core.Waiter;
 import com.mycompany.coffeeshop.core.beverageproduction.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Coffee Shop
@@ -17,6 +19,8 @@ import com.mycompany.coffeeshop.core.beverageproduction.*;
  * @author colin
  */
 public class CoffeeShop {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CoffeeShop.class);
 
     private final Barista barista = new Barista();
     private final Waiter waiter = new Waiter();
@@ -84,7 +88,9 @@ public class CoffeeShop {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("CoffeeShop");
+        //System.out.println("CoffeeShop");
+        LOGGER.info("Starting Coffeeshop");
+        LOGGER.info("Coffeeshop: starting trading");
         new CoffeeShop().startTrading();
     }
 }

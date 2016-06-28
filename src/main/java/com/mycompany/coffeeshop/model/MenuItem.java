@@ -55,7 +55,7 @@ public enum MenuItem {
 
     WATER(0.00);
 
-    private BigDecimal price;
+    private final BigDecimal price;
 
     MenuItem(double price) {
         this.price = BigDecimal.valueOf(price);

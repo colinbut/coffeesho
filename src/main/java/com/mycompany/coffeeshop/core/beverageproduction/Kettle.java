@@ -31,7 +31,7 @@ public class Kettle implements BeverageFactory {
         } else if (menuItem == MenuItem.CHAI_TEA) {
             beverage = new ChaiTea();
         } else  {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Menu item not Tea");
         }
 
         return beverage;

@@ -23,7 +23,7 @@ public class HotChocolateMachine implements BeverageFactory {
     public Beverage produceBeverage(MenuItem menuItem) {
 
         if (menuItem != MenuItem.HOT_CHOCOLATE) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Menu item is not a hot chocolate");
         }
 
         return new HotChocolate();
