@@ -50,7 +50,7 @@ public class Waiter implements Runnable {
     public void run() {
         // constantly delivering coffee to customers
         // it's a busy coffee shop (lunch hour :) )
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             deliverBeverage();
         }
     }

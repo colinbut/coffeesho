@@ -68,7 +68,8 @@ public class Barista implements Runnable {
             LOGGER.info("Barista: Cashier sent order - {}", beverage);
             orderQueue.put(beverage);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            LOGGER.error("{}",e);
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -144,7 +145,7 @@ public class Barista implements Runnable {
      */
     @Override
     public void run() {
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             //System.out.println("Taking orders from queue of orders");
             //System.out.println("Making another beverage now");
 

@@ -22,13 +22,14 @@ public class Customer implements Runnable {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Customer.class);
 
-    private final Cashier cashier;
-
     // (possible) maximum of drinks that a customer wants to order
     private static final int MAX_NUMBER_OF_DRINKS = 5;
 
     // the time between each drink order in milliseconds
     private static final int TIME_BETWEEN_ORDER_MS = 5000;
+
+    private final Cashier cashier;
+
 
     /**
      * Constructor
@@ -45,13 +46,14 @@ public class Customer implements Runnable {
      */
     @Override
     public void run() {
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             try {
                 Thread.sleep(TIME_BETWEEN_ORDER_MS);
                 LOGGER.info("Customer: ordering drinks after {} have passed", TIME_BETWEEN_ORDER_MS);
                 orderDrinks();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                LOGGER.error("{}",e);
+                Thread.currentThread().interrupt();
             }
         }
     }
@@ -59,7 +61,7 @@ public class Customer implements Runnable {
     /**
      * Order drinks
      */
-    void orderDrinks() {
+    private void orderDrinks() {
         int randomNumberOfDrinks = ThreadLocalRandom.current().nextInt(1, MAX_NUMBER_OF_DRINKS);
         LOGGER.debug("Customer: ordering {} drinks", randomNumberOfDrinks);
         for (int i = 0; i < randomNumberOfDrinks; i++) {
