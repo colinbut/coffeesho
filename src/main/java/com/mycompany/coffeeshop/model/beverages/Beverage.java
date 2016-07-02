@@ -5,7 +5,6 @@
  */
 package com.mycompany.coffeeshop.model.beverages;
 
-import com.mycompany.coffeeshop.model.Menu;
 import com.mycompany.coffeeshop.model.MenuItem;
 
 import java.util.HashSet;
