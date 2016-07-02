@@ -25,7 +25,7 @@ public class WaterTap implements BeverageFactory {
     public Beverage produceBeverage(MenuItem menuItem) {
 
         if (menuItem != MenuItem.WATER) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("MenuItem passed in not " + MenuItem.WATER);
         }
 
         return new Water();
