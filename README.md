@@ -19,7 +19,8 @@ Once the Barista has produced your beverage, the Waiter delivers it to you.
 * Me <colin.but@outlook.com>
 
 ### <a name="project-demo"></a>Project Demo
-TBD
+![Image of a demo]
+(src/main/resources/etc/demo-screenshot.png)
 
 ### <a name="tech-tool"></a>Technology/Tool
 * Java
