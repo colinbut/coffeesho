@@ -25,6 +25,7 @@ Once the Barista has produced your beverage, the Waiter delivers it to you.
 ### <a name="tech-tool"></a>Technology/Tool
 * Java
 * Maven
-* Git
+* Gradle
+* Git (Github)
 * Travis CI
 * Logback
