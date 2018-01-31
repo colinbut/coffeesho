@@ -1,5 +1,7 @@
 # Coffee Shop
 
+[![Build Status](https://travis-ci.org/colinbut/coffeeshop.svg?branch=master)](https://travis-ci.org/colinbut/coffeeshop)
+
 ## Table of Contents
 
 * [Summary/Overview](#summary-overview)
